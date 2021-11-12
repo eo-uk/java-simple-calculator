@@ -8,6 +8,8 @@ public class main {
 		Scanner scan = new Scanner(System.in);
 		
 		while (true) {
+			// Get input 
+			System.out.println("Enter operator (+,-,*,/), then the numbers, separated by space:");
 			String[] input = scan.nextLine().split("\\s+");
 			
 			// Handle exit and absent numbers
@@ -24,13 +26,13 @@ public class main {
 			// Get all numbers as String array
 			String[] stringNums = Arrays.copyOfRange(input, 1, input.length);
 			
-			// Convert String numbers to int array 
-			int[] intNums = new int[stringNums.length];
+			// Convert String numbers to float array 
+			float[] floatNums = new float[stringNums.length];
 			for (int i=0; i<stringNums.length; i++) {
-				intNums[i] = Integer.parseInt(stringNums[i]);
+				floatNums[i] = Float.parseFloat(stringNums[i]);
 			}
 			
-			System.out.println(calculator.calculate(op, intNums));
+			System.out.println(calculator.calculate(op, floatNums));
 		}
 	}
 }
